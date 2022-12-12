@@ -2,6 +2,9 @@ pipeline{
     agent{
         label "maven"
     }
+    tools{
+        tool name: 'MVN', type: 'maven'
+    }
     stages{
         stage("SCM"){
             steps{
