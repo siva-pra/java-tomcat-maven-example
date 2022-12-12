@@ -3,7 +3,7 @@ pipeline{
         label "maven"
     }
     tools{
-        tool name: 'MVN', type: 'maven'
+        tool name: 'MVN'
     }
     stages{
         stage("SCM"){
