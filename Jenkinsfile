@@ -24,10 +24,10 @@ pipeline{
         stage("deploy to tomcat"){
             steps{
                 sshagent(['maven-node']) {
-                     sh ""
+                     sh """
            scp -o StrictHostKeyChecking=no target/*.war ubuntu@34.211.148.129:/home/ubuntu
            ssh -o StrictHostKeyChecking=no ubuntu@34.211.148.129 'cp -r /home/ubuntu/*.war /opt/tomcat/webapps/'
-         ""
+         """
                }
             }
         }
