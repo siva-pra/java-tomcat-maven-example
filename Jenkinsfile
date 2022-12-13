@@ -3,7 +3,7 @@ pipeline{
         label "maven"
     }
     tools{
-        maven '/opt/maven'
+        maven 'MVN_HOME'
     }
     stages{
         stage("SCM"){
