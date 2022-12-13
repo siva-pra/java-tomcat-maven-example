@@ -16,7 +16,7 @@ pipeline{
         }
         stage("BUILD"){
             steps{
-                 sh '''mvn clean install
+                 sh '''mvn clean package
  '''
             }
            
@@ -24,7 +24,7 @@ pipeline{
         stage("deploy to tomcat"){
             steps{
                 sshagent(['maven-node']) {
-                     sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@34.211.148.129:/opt/tomcat/webapps/'
+                     sh 'scp -o StrictHostKeyChecking=no target/java-tomcat-maven-example.war ubuntu@34.211.148.129:/opt/tomcat/webapps/'
     
                }
             }
