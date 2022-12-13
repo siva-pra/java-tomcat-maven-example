@@ -11,7 +11,7 @@ pipeline{
     stages{
         stage("SCM"){
             steps{
-               git 'https://github.com/ManfredWind/deploying-spring-boot-as-war-on-tomcat.git'
+               git 'https://github.com/siva-pra/java-tomcat-maven-example.git'
             }
         }
         stage("BUILD"){
